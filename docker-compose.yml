@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  db:
+    image: db-image
+    container_name: db-container
+    restart: on-failure
+    build:
+      context: ./aggregator-db/
+      dockerfile: Dockerfile
+    ports:
+      - '5444:5432'
+    volumes:
+      - ./aggregator-db/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: news
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d news" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+  front:
+    image: front-image
+    container_name: front-container
+    restart: on-failure
+    build:
+      context: ./aggregator-front/
+      dockerfile: Dockerfile
+    ports:
+      - '3030:3000'
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db
