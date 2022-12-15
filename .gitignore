@@ -1,3 +1,4 @@
 /.idea/
 /aggregator-front.iml
 /aggregator-db/data/
+**/package-lock.json

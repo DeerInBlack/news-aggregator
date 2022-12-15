@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+.toast.error-header,
+.toast.error-header > .toast-header {
+    background: #fadbd8 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.toast.success-header,
+.toast.success-header > .toast-header {
+    background: #D0ECE7 !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.error {
+    color: #E74C3C !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.error-icon, .error-header-text {
+    color: #E74C3C !important;
 }
 
-.App-link {
-  color: #61dafb;
+.mr-icon {
+    margin-right: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ml-icon {
+    margin-left: 1rem;
+}
+
+.success-icon, .success-header-text {
+    color: #16A085 !important;
+}
+
+.navbar, .container-shadow {
+    box-shadow: 0 5px 10px #D6DBDF !important;
+}
+
+.dropdown-item.active, .dropdown-item:focus {
+    color: black !important;
+    background-color: #c6c7c8 !important;
+}
+
+.user {
+    box-shadow: 0 5px 10px #D6DBDF !important;
+}
+
+#app:not(:empty) + .sk-cube-grid {
+    display: none;
+}
+
+.sk-cube-grid {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: #333;
+    float: left;
+    animation: sk-cubeGridScaleDelay 1.5s infinite ease-in-out;
+}
+
+.sk-cube-grid .sk-cube1 {
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube2 {
+    animation-delay: 0.4s;
+}
+
+.sk-cube-grid .sk-cube3 {
+    animation-delay: 0.6s;
+}
+
+.sk-cube-grid .sk-cube4 {
+    animation-delay: 0.1s;
+}
+
+.sk-cube-grid .sk-cube5 {
+    animation-delay: 0.3s;
+}
+
+.sk-cube-grid .sk-cube6 {
+    animation-delay: 0.5s;
+}
+
+.sk-cube-grid .sk-cube7 {
+    animation-delay: 0s;
+}
+
+.sk-cube-grid .sk-cube8 {
+    animation-delay: 0.2s;
+}
+
+.sk-cube-grid .sk-cube9 {
+    animation-delay: 0.4s;
+}
+
+@keyframes sk-cubeGridScaleDelay {
+    0%,
+    70%,
+    100% {
+        transform: scale3D(1, 1, 1);
+    }
+    35% {
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+input {
+    box-shadow: 0 5px 10px #D6DBDF !important;
+}
+
+.loginFormStyle {
+    width: 25%;
+    margin: 5% auto;
+    font-size: 15px;
+}
+
+.registerFormStyle {
+    width: 75%;
+    margin: 5% auto;
+    font-size: 15px;
+}
+
+.authBtnStyle {
+    font-weight: bold;
+    min-height: 38px;
+    border-radius: 4px;
+}
+
+.link {
+    cursor: pointer;
 }
